@@ -13,11 +13,14 @@ the version
 of JSP implementation from this project, first download a version of
 the JSP implementation.<br>
 <ul>
-  <li><aXX href="snapshot.jar">Snapshot release</aXX></li>
+  <li><a href="http://download.java.net/maven/2/org/apache/jasper/jspimpl/1.0-SNAPSHOT/jspimpl-1.0-SNAPSHOT.jar">Snapshot release</a></li>
   <li>version 1.0</li>
 </ul>
-To run the downloaded JSP implementation with a web container, dropping
-it in WEB-INF/lib may not work.&nbsp;&nbsp; The following script can be
-used to replace the JSP implementation in a installed glassfish.<br>
+<p> To run the downloaded JSP implementation with a web container, dropping
+it in WEB-INF/lib may not work.&nbsp;&nbsp; 
+For glassfish 9.1, portions of the lib/appserv-rt.jar has to be replaced
+with our jar file. </p>
+<p> The jar files are also available from the maven repository
+<strong>http://download.java.net/maven/2</strong></p>
 </body>
 </html>
