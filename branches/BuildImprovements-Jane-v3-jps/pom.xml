@@ -82,8 +82,8 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:https://jsp.dev.java.net/svn/jsp</connection>
-        <developerConnection>scm:svn:https://jsp.dev.java.net/svn/jsp</developerConnection>
+        <connection>scm:svn:https://jsp.dev.java.net/svn/jsp/branches/BuildImprovements-Jane-v3-jps</connection>
+        <developerConnection>scm:svn:https://jsp.dev.java.net/svn/jsp/branches/BuildImprovements-Jane-v3-jps</developerConnection>
         <url>https://jsp.dev.java.net/source/browse/jsp</url>
     </scm>
     <build>
