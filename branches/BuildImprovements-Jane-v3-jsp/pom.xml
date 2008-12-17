@@ -82,9 +82,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:https://jsp.dev.java.net/svn/jsp</connection>
-        <developerConnection>scm:svn:https://jsp.dev.java.net/svn/jsp</developerConnection>
-        <url>https://jsp.dev.java.net/source/browse/jsp</url>
+        <connection>scm:svn:https://jsp.dev.java.net/svn/jsp/branches/BuildImprovements-Jane-v3-jsp</connection>
+        <developerConnection>scm:svn:https://jsp.dev.java.net/svn/jsp/branches/BuildImprovements-Jane-v3-jsp</developerConnection>
+        <url>https://jsp.dev.java.net/svn/jsp/branches/BuildImprovements-Jane-v3-jsp</url>
     </scm>
     <build>
         <plugins>
