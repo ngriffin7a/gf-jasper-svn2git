@@ -48,7 +48,7 @@
     <artifactId>jsp-api</artifactId>
     <packaging>jar</packaging>
     <version>${jsp-api.version}</version>
-    <name>JavaServer Pages(TM) API v${jsp-api.version}</name>
+    <name>JavaServer Pages(TM) API</name>
 
     <developers>
         <developer>
@@ -99,12 +99,10 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>el-api</artifactId>
-            <version>${el-impl.version}</version>
         </dependency>
    </dependencies>
 </project>
