@@ -47,7 +47,7 @@
     <groupId>javax.servlet.jsp</groupId>
     <artifactId>jsp-api</artifactId>
     <packaging>jar</packaging>
-    <version>${jsp-api.version}</version>
+    <version>2.1.2</version>
     <name>JavaServer Pages(TM) API</name>
 
     <developers>
