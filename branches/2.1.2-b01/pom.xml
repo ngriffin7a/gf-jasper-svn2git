@@ -152,10 +152,10 @@
 
     <properties>
         <jsp-api.version>2.1.2</jsp-api.version>
-        <jsp-impl.version>2.1.2-SNAPSHOT</jsp-impl.version>
+        <jsp-impl.version>2.1.2-b01</jsp-impl.version>
         <servlet-api.version>2.5</servlet-api.version>
-        <el-api.version>2.1.2-SNAPSHOT</el-api.version>
-        <el-impl.version>2.1.2-SNAPSHOT</el-impl.version>
+        <el-api.version>2.1.2-b01</el-api.version>
+        <el-impl.version>2.1.2-b01</el-impl.version>
         <ant.version>1.7.0</ant.version>
     </properties>
 
