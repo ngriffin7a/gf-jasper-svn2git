@@ -70,7 +70,6 @@ package org.apache.jasper.compiler;
 public class ELParser {
 
     private Token curToken;	// current token
-    private Token prevToken;	// previous token
     private ELNode.Nodes expr;
     private ELNode.Nodes ELexpr;
     private int index;		// Current index of the expression
@@ -121,7 +120,7 @@ public class ELParser {
 	StringBuffer buf = new StringBuffer();
 	ELexpr = new ELNode.Nodes();
 	while (hasNext()) {
-	    nextToken();
+	    curToken = nextToken();
 	    if (curToken instanceof Char) {
 		if (curToken.toChar() == '}') {
 		    break;
@@ -149,8 +148,6 @@ public class ELParser {
      * FunctionInvokation ::= (identifier ':')? identifier '('
      *			      (Expression (,Expression)*)? ')'
      * Note: currently we don't parse arguments
-     * In EL 1.2, method can include parameters, so we need to exclude
-     * cases such as a.b().
      */
     private boolean parseFunction() {
 	if (! (curToken instanceof Id) || isELReserved(curToken.toString())) {
@@ -160,8 +157,6 @@ public class ELParser {
 	String s2 = curToken.toString();  // Function name
 	int mark = getIndex();
 	if (hasNext()) {
-            boolean nodotSeen = prevToken == null || 
-                                (prevToken.toChar() != '.');
 	    Token t = nextToken();
 	    if (t.toChar() == ':') {
 		if (hasNext()) {
@@ -175,9 +170,7 @@ public class ELParser {
 		    }
 		}
 	    }
-	    if (t.toChar() == '(' && nodotSeen) {
-                // In EL 1.2, method expressions can include parameters, so
-                // .foo() is a method expression , and not a function
+	    if (t.toChar() == '(') {
 		ELexpr.add(new ELNode.Function(s1, s2));
 		return true;
 	    }
@@ -266,7 +259,6 @@ public class ELParser {
     private Token nextToken() {
 	skipSpaces();
 	if (hasNextChar()) {
-            prevToken = curToken;
 	    char ch = nextChar();
 	    if (Character.isJavaIdentifierStart(ch)) {
 		StringBuffer buf = new StringBuffer();
@@ -276,17 +268,17 @@ public class ELParser {
 		    buf.append(ch);
 		    nextChar();
 		}
-		return (curToken = new Id(buf.toString()));
+		return new Id(buf.toString());
 	    }
 
 	    if (ch == '\'' || ch == '"') {
-		return curToken = parseQuotedChars(ch);
+		return parseQuotedChars(ch);
 	    } else {
 		// For now...
-		return curToken = new Char(ch);
+		return new Char(ch);
 	    }
 	}
-	return curToken = null;
+	return null;
     }
 
     /*

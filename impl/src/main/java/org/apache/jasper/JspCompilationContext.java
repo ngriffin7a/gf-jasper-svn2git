@@ -658,11 +658,10 @@ public class JspCompilationContext {
                                 rctxt.getBytecodes());
     }
 
-    public void makeOutputDir(String outdir) {
+    public void makeOutputDir() {
         synchronized(outputDirLock) {
-            File outDirFile = new File(outdir);
+            File outDirFile = new File(outputDir);
             outDirFile.mkdirs();
-            outputDir = outdir;
         }
     }
 
@@ -682,9 +681,10 @@ public class JspCompilationContext {
 
         try {
             // Append servlet or tag handler path to scratch dir
-            File f = new File( options.getScratchDir(), path );
-            makeOutputDir(f.getPath() + File.separator);
             baseUrl = options.getScratchDir().toURL();
+            File f = new File( options.getScratchDir(), path );
+            outputDir = f.getPath() + File.separator;
+            makeOutputDir();
         } catch (Exception e) {
             throw new IllegalStateException("No output directory: " +
                                             e.getMessage());
