@@ -82,9 +82,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:https://jsp.dev.java.net/svn/jsp</connection>
-        <developerConnection>scm:svn:https://jsp.dev.java.net/svn/jsp</developerConnection>
-        <url>https://jsp.dev.java.net/source/browse/jsp</url>
+        <connection>scm:svn:https://uel.dev.java.net/svn/uel</connection>
+        <developerConnection>scm:svn:https://uel.dev.java.net/svn/uel</developerConnection>
+        <url>https://uel.dev.java.net/source/browse/uel</url>
     </scm>
 
     <build>
