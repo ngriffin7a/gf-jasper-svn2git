@@ -17,13 +17,17 @@
 <b>Build Steps</b>
 <ol>
   <li>Checkout the sources.</li>
-  <code>% svn co https://jsp.dev.java.net/svn/jsp/trunk jspw</code>
+  <code>% svn co https://svn.java.net/svn/jsp~svn/trunk jspw</code>
   <br><br>
-  <li>Build a jar.</li>
-  <code>% cd jspw<br/>
-        % mvn package </code>
+  <li>Build and install api jar.</li>
+  <code>% cd jspw/api<br/>
+        % mvn install</code>
   <br><br>
-  <li>Build javadoc.</li>
-  <code>% cd jspw<br/>
+  <li>Build api javadoc.</li>
+  <code>% cd jspw/api<br/>
         % mvn javadoc:javadoc </code>
+  <br><br>
+  <li>Build and install impl jar.</li>
+  <code>% cd jspw/impl <br/>
+        % mvn package </code>
 </ol>
